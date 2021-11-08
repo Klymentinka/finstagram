@@ -9,7 +9,7 @@ class CreateBaseTables < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :finstagram_posts do |t|
+    create_table :hamstagram_posts do |t|
       t.references :user
       t.string :photo_url
       t.timestamps
@@ -17,14 +17,14 @@ class CreateBaseTables < ActiveRecord::Migration
 
     create_table :comments do |t|
       t.references :user
-      t.references :finstagram_post
+      t.references :hamstagram_post
       t.text :text
       t.timestamps
     end
 
     create_table :likes do |t|
       t.references :user
-      t.references :finstagram_post
+      t.references :hamstagram_post
       t.timestamps
     end
 

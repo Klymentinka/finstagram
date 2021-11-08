@@ -40,12 +40,12 @@ main {
   margin: 0 auto;
 }
 
-.new-finstagram-post {
+.new-hamstagram-post {
   text-align: center;
   margin-bottom: 2em;
 }
 
-.new-finstagram-post > .button {
+.new-hamstagram-post > .button {
   display: inline-block;
   padding: 1em;
   width: 100%;
@@ -60,7 +60,7 @@ main {
   display: inline-block;
 }
 
-.finstagram-post > * {
+.hamstagram-post > * {
   margin-bottom: 1em;
 }
 
