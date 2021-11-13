@@ -178,7 +178,8 @@ sub {
  */
 
 img {
-  border: 0;
+  border: 1px solid green;
+  border-radius: 50px;
 }
 
 /**

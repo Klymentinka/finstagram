@@ -83,11 +83,14 @@ main {
 
 .photo {
   display: block;
+  /* border-radius: 50px; */
 }
 
 .photo img {
   display: block;
   width: 100%;
+  border-radius: 50px;
+  
 }
 
 .actions {

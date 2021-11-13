@@ -1,0 +1,36 @@
+h1 {
+  color:rgb(2, 66, 21);
+}
+
+header {
+  background-color: #b2da98;
+  color: #E8FDFF;
+}
+
+body {
+  background-color: rgb(238, 207, 207);
+  border-radius: 25px;
+  font-family: 'Yuji Mai', serif;  
+}
+
+main {
+  background-color: white;
+  padding: 16px;
+  margin: auto;
+}
+
+.hamstagram-post {
+  margin-bottom: 48px;
+}
+
+.hamstagram-post .user-info img {
+  border-radius: 50%;
+}
+
+a.photo {
+  transition: padding 0.5s;
+}
+
+a.photo:hover {
+  padding: 10px;
+}
