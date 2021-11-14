@@ -1,9 +1,9 @@
 h1 {
-  color:rgb(2, 66, 21);
+  color:darkmagenta;
 }
 
 header {
-  background-color: #b2da98;
+  background-color: #b0daeb;
   color: #E8FDFF;
 }
 
@@ -33,4 +33,8 @@ a.photo {
 
 a.photo:hover {
   padding: 10px;
+}
+
+#likes {
+  color: green;
 }

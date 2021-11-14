@@ -178,7 +178,7 @@ sub {
  */
 
 img {
-  border: 1px solid green;
+  border: 1px solid darkmagenta;
   border-radius: 50px;
 }
 
