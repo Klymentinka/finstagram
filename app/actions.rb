@@ -8,7 +8,7 @@ end
 
 get '/' do
 
-  hamstagram_post_hammy = {
+  @hamstagram_post_hammy = {
     username: "hammy_j",
     avatar_url: "https://sdl-stickershop.line.naver.jp/products/0/0/1/1046635/android/stickers/1947077.png",
     photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ361flrQzAgTMvexAumBJcYdirX8f5uZ1ks1ejpPtoF2qEmB3KRoIcWRLcwoP1d7IMPq8&usqp=CAU1",
@@ -21,7 +21,7 @@ get '/' do
     }]
   }
 
-  hamstagram_post_kirk = {
+  @hamstagram_post_kirk = {
     username: "kirk_ham",
     avatar_url: "https://i.pinimg.com/originals/ec/7e/46/ec7e46a7e3f08f9b2c1762fae1f86ead.jpg",
     photo_url: "https://cdn.mos.cms.futurecdn.net/96MvxQEmF5YkjSXGebZoeN.jpg",
@@ -34,7 +34,7 @@ get '/' do
     }]
   }
 
-  hamstagram_post_marlin = {
+  @hamstagram_post_marlin = {
     username: "marlin_peppa",
     avatar_url: "https://i.pinimg.com/originals/74/5c/7d/745c7daad275266fbbc11ca609c772a9.jpg",
     photo_url: "https://cryptoglobe.s3.eu-west-2.amazonaws.com/2021/10/cute-golden-hamster-768x512.jpg",
@@ -46,6 +46,8 @@ get '/' do
       text: "lunchtime! ;)!"
     }]
   }
-  [hamstagram_post_hammy, hamstagram_post_kirk, hamstagram_post_marlin].to_s
 
+  @hamstagram_posts = [@hamstagram_post_hammy, @hamstagram_post_kirk, @hamstagram_post_marlin]
+  
+  erb(:index)
 end
