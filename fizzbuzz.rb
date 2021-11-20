@@ -1,6 +1,7 @@
-arr = [*1..100]
+# arr = [*1..100]
 
-for item in arr
+# for item in arr
+for item in (1..100) do
     
     # print_flag = false
     # if item % 3 == 0
