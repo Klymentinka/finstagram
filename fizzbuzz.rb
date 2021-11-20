@@ -1,7 +1,7 @@
 # arr = [*1..100]
 
 # for item in arr
-for item in (1..100) do
+for item in (1..100).each do
     
     # print_flag = false
     # if item % 3 == 0
