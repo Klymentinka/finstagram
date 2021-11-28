@@ -1,34 +1,26 @@
-<!doctype html>
-<html>
-    <head>
-    </head>
-    <body>
-        <header><h1>Hamstagram</h1></header>
-        <main role="main">
-        <% @hamstagram_posts.each do |hamstagram_post| %>
-
-            <article class="hamstagram-post">
-                <div class="user-info">
-                    <img src="<%= hamstagram_post[:avatar_url]%>" alt="<%= hamstagram_post[:username]%>">
-                    <h2> <%= hamstagram_post[:username]%> </h2>
-                    <h3> <%= hamstagram_post[:humanized_time_ago]%> </h3>
-                </div>
-                <a class="photo" href="#">
-                    <img src="<%= hamstagram_post[:photo_url]%>" alt="post from <%= hamstagram_post[:username]%>">
-                </a>
-                <div id=likes class="actions">
-                  <%= hamstagram_post[:like_count]%> likes
-                    <span class ="comment-count" style="color:blue"> <%= hamstagram_post[:comment_count]%> comments</span>
-                </div>
-                <ul class="comments">
-                    <li>
-                        <p>
-                          <%= hamstagram_post[:comments][0][:username] %>: <%= hamstagram_post[:comments][0][:text]%>  
-                        </p>
-                    </li>
-                </ul>
-            </article>
+<% @hamstagram_posts.each do |hamstagram_post| %>
+    <article class="hamstagram-post">
+        <div class="user-info">
+            <img src="<%= hamstagram_post.user.avatar_url %>" alt="<%= hamstagram_post.user.username %>">
+            <h2><%= hamstagram_post.user.username %></h2>
+            <h3><%= hamstagram_post.humanized_time_ago %></h3>
+        </div>
+        <a class="photo" href="#">
+            <img src="<%= hamstagram_post.photo_url %>" alt="hamstagram post from <%= hamstagram_post.user.username %>">
+        </a>
+        <div id=likes class="actions">
+            <%= hamstagram_post.like_count %> likes
+            <span class ="comment-count" style="color:blue"> <%= hamstagram_post.comment_count %> comments</span>
+        </div>
+        <ul class="comments">
+            <% hamstagram_post.comments.each do |comment| %>
+            <li>
+                <p>
+                    <%= comment.user.username %>: <%= comment.text %>
+                </p>
+            </li>
         <% end %>
-        </main>
-    </body>
-</html>
+        </ul>
+    </article>
+<% end %>
+      
