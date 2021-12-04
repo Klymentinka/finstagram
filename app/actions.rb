@@ -52,3 +52,25 @@ get '/logout' do
   session[:user_id] = nil
   redirect to('/')
 end
+
+get '/hamstagram_posts/new' do
+  @hamstagram_post = HamstagramPost.new
+  erb(:"hamstagram_posts/new")
+end
+
+post '/hamstagram_posts' do
+  photo_url = params[:photo_url]
+
+  @hamstagram_post = HamstagramPost.new({ photo_url: photo_url, user_id: current_user.id })
+
+  if @hamstagram_post.save
+    redirect(to('/'))
+  else
+    erb(:"hamstagram_posts/new")
+  end
+end
+
+get '/hamstagram_posts/:id' do
+  @hamstagram_post = HamstagramPost.find(params[:id])   # find the finstagram post with the ID from the URL
+  erb(:"hamstagram_posts/show")               # render app/views/finstagram_posts/show.erb
+end

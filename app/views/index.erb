@@ -1,39 +1,11 @@
-<header>
-  <h1>Hamstagram</h1>
-  <div class="login-info">
-    <% if current_user %>
-      <%= current_user.username %>
-      <a href="/logout">Logout</a>
-    <% else %>
-      <a href="/login">Login</a>
-      <a href="/signup">Signup</a>
-    <% end %>
-  </div>
-</header>
+
+<% if current_user %>
+<div class="new-hamstagram-post">
+  <a href="/hamstagram_posts/new" class="button">New Post</a>
+</div>
+<% end %>
 
 <% @hamstagram_posts.each do |hamstagram_post| %>
-    <article class="hamstagram-post">
-        <div class="user-info">
-            <img src="<%= hamstagram_post.user.avatar_url %>" alt="<%= hamstagram_post.user.username %>">
-            <h2><%= hamstagram_post.user.username %></h2>
-            <h3><%= hamstagram_post.humanized_time_ago %></h3>
-        </div>
-        <a class="photo" href="#">
-            <img src="<%= hamstagram_post.photo_url %>" alt="hamstagram post from <%= hamstagram_post.user.username %>">
-        </a>
-        <div id=likes class="actions">
-            <%= hamstagram_post.like_count %> likes
-            <span class ="comment-count" style="color:blue"> <%= hamstagram_post.comment_count %> comments</span>
-        </div>
-        <ul class="comments">
-            <% hamstagram_post.comments.each do |comment| %>
-            <li>
-                <p>
-                    <%= comment.user.username %>: <%= comment.text %>
-                </p>
-            </li>
-        <% end %>
-        </ul>
-    </article>
+  <%= erb(:'shared/hamstagram_post', { locals: { hamstagram_post: hamstagram_post }}) %>
 <% end %>
       

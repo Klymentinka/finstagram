@@ -15,7 +15,7 @@ body {
 
 main {
   background-color: white;
-  padding: 16px;
+  padding: auto;
   margin: auto;
 }
 
@@ -24,7 +24,7 @@ main {
 }
 
 .hamstagram-post .user-info img {
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 a.photo {
