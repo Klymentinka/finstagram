@@ -1,3 +1,16 @@
+<header>
+  <h1>Hamstagram</h1>
+  <div class="login-info">
+    <% if current_user %>
+      <%= current_user.username %>
+      <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/login">Login</a>
+      <a href="/signup">Signup</a>
+    <% end %>
+  </div>
+</header>
+
 <% @hamstagram_posts.each do |hamstagram_post| %>
     <article class="hamstagram-post">
         <div class="user-info">
