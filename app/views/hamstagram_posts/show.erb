@@ -12,5 +12,5 @@
 </div>
 </header>
 <main role="main">
-    <%= erb(:'shared/hamstagram_post', { locals: { hamstagram_post: @hamstagram_post }}) %>
+<%= erb(:"shared/hamstagram_post", { locals: { hamstagram_post: @hamstagram_post, allow_new_comment: true }}) %>
 </main>

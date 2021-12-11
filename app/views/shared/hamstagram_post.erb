@@ -11,6 +11,9 @@
     <%= hamstagram_post.like_count %> likes
     <span class="comment-count"><%= hamstagram_post.comment_count %> comments</span>
   </div>
+  <% if current_user && allow_new_comment %>
+  <%= erb(:"shared/new_comment", { locals: { hamstagram_post: hamstagram_post }}) %>
+  <% end %>
   <ul class="comments">
     <% hamstagram_post.comments.each do |comment| %>
       <li>

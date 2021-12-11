@@ -74,3 +74,18 @@ get '/hamstagram_posts/:id' do
   @hamstagram_post = HamstagramPost.find(params[:id])   # find the finstagram post with the ID from the URL
   erb(:"hamstagram_posts/show")               # render app/views/finstagram_posts/show.erb
 end
+
+post '/comments' do
+  # point values from params to variables
+  text = params[:text]
+  hamstagram_post_id = params[:hamstagram_post_id]
+
+  # instantiate a comment with those values & assign the comment to the `current_user`
+  comment = Comment.new({ text: text, hamstagram_post_id: hamstagram_post_id, user_id: current_user.id })
+
+  # save the comment
+  comment.save
+
+  # `redirect` back to wherever we came from
+  redirect(back)
+end

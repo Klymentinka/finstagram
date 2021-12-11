@@ -1,0 +1,9 @@
+<form class="new-comment" action="/comments" method="POST">
+  <div class="form-group">
+    <input type="text" id="text" name="text" placeholder="Comment">
+  </div>
+  <input type="hidden" id="hamstagram_post_id" name="hamstagram_post_id" value="<%= hamstagram_post.id %>">
+  <div class="form-group">
+    <button class="button" type="submit">Submit</button>
+  </div>
+</form>

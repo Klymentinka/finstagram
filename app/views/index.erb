@@ -6,6 +6,6 @@
 <% end %>
 
 <% @hamstagram_posts.each do |hamstagram_post| %>
-  <%= erb(:'shared/hamstagram_post', { locals: { hamstagram_post: hamstagram_post }}) %>
+  <%= erb(:"shared/hamstagram_post", { locals: { hamstagram_post: hamstagram_post, allow_new_comment: false }}) %>
 <% end %>
       
