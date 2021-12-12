@@ -12,7 +12,7 @@
     <span class="comment-count"><%= hamstagram_post.comment_count %> comments</span>
   </div>
   <% if current_user && allow_new_comment %>
-  <%= erb(:"shared/new_comment", { locals: { hamstagram_post: hamstagram_post }}) %>
+    <%= erb(:"shared/new_comment", { locals: { hamstagram_post: hamstagram_post }}) %>
   <% end %>
   <ul class="comments">
     <% hamstagram_post.comments.each do |comment| %>
